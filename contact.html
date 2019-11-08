@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang=”en” xml:lang=”en”>
+<head>
+	<title>Contact - Jessica Fulford</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mainstyle.css">
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- jQuery for each DOM manipulation-->
+	<!-- http://jefproject.s3-website.us-east-2.amazonaws.com/ -->
+
+	<script>
+	// CHECKBOX VALIDATION
+		var football = null;
+		var baseball = null;
+		var soccer = null;
+		var hockey = null;
+		var basketball = null;
+		function checkboxValidation() {
+			football = $(".checkbox-sport[value='football']").is(':checked');
+			baseball = $(".checkbox-sport[value='baseball']").is(':checked');
+			soccer = $(".checkbox-sport[value='soccer']").is(':checked');
+			hockey = $(".checkbox-sport[value='hockey']").is(':checked');
+			basketball = $(".checkbox-sport[value='basketball']").is(':checked');
+
+			if (football == false && baseball == false && soccer == false && hockey == false && basketball == false) {
+				alert("Please check a sport!");
+				return false;
+			} 
+			else {
+				return true;
+			}
+		}
+	</script>
+
+	<style>
+		form input, form textarea {
+			display: block;
+		}
+		form {
+			margin-top: 20px;
+		}
+		table {
+			float: right;
+		}
+		input, textarea[name="input-message"], select {
+			background-color: #EEEEEE;
+			border: 0px;
+			padding: 10px 15px;
+			font-family: Avenir;
+			font-size: 16px;
+			width: 400px;
+			margin-bottom: 20px;
+			border: 2px solid #EEEEEE;
+			box-sizing: border-box;
+		}
+		input:focus, textarea[name="input-message"]:focus {
+			border: 2px solid rgba(187, 195, 204, .5);
+		}
+		textarea[name="input-message"] {
+			resize: none;
+			height: 140px;
+		}
+		label {
+			font-family: Marion;
+			font-weight: 800;
+		}
+		#input-reset {
+			cursor: hand;
+			cursor: pointer;
+			font-family: Marion;
+			font-weight: 800;
+			background-color: #EEEEEE;
+			border: 0px;
+			padding: 10px 15px;
+			font-size: 16px;
+			width: 400px;
+			margin-bottom: 20px;
+			border: 2px solid #EEEEEE;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		#input-submit {
+			border: 2px solid #bbc3cc;
+			cursor: hand;
+			cursor: pointer;
+			font-family: Marion;
+			font-weight: 800;
+		}
+		#input-submit:hover, #input-reset:hover {
+			background-color: #E5ECEE;
+		}
+		#input-submit:active {
+			background-color: rgba(187, 195, 204, .5);
+		}
+		/* radio buttons (gender) */
+		input[type="radio"] {
+			width: auto;
+		}
+		#input-male-div {
+			float: left;
+			margin-right: 20px;
+		}
+		/* checkboxes (sports interests)*/
+		input[type="checkbox"] {
+			display: inline;
+			width: auto;
+			padding-left: 50px;
+			margin-left: 5px;
+			margin-right: 15px;
+			margin-bottom: 0px;
+		}
+		label#label-sport label {
+			display: inline-block;
+			font-weight: 400;
+			font-size: 14px;
+			padding: 5px;
+			margin-bottom: 20px;
+		}
+		/* select (preferred contact time)*/
+		select {
+			width: 140px;
+			padding: 5px 10px;
+			margin-left: 10px;
+		}
+		#label-contact-time {
+			display: block;
+		}
+
+		/* phone number */
+		input[name="input-phone-area-code"], input[name="input-phone-three"] {
+			width: 60px;
+			display: inline-block;
+			height: 36px;
+		}
+		input[name="input-phone-four"] {
+			width: 70px;
+			display: inline-block;
+			height: 36px;
+		}
+		.label-phone {
+			font-size: 22px;
+			font-family: Helevetica Neue;
+		}
+
+		/* reset window */
+		#confirm-reset-window {
+			position: absolute;
+			width: 30%;
+			height: 20%;
+			left: 35%;
+			top: 80%;
+			box-sizing: border-box;
+			padding: 20px;
+
+			background-color: #EEEEEE;
+			z-index: 4;
+			border: 4px solid #bbc3cc;
+		}
+		#confirm-reset-window h2 {
+			text-align: center;
+			padding-top: 0px;
+			margin-top: 0px;
+			color: #334444;
+		}
+
+		#confirm-reset-overlay {
+			position: absolute;
+			width: 100%;
+			height: 145%;
+			top: 0px;
+			left: 0px;
+			background-color: rgba(0,0,0,.4);
+			z-index: 2;
+		}
+
+		span.reset-button {
+			border: 2px solid #bbc3cc;
+			background-color: #34404C;
+			color: #bbc3cc;
+			font-family: Avenir;
+			font-size: 16px;
+			padding: 5px 50px;
+			cursor: hand;
+			cursor: pointer;
+		}
+		#reset-cancel {
+			float: left;
+		}
+		#reset-reset {
+			float: right;
+		}
+	</style>
+</head>
+<body>
+<!-- nav -->
+	<header>
+		<!-- nav -->
+		<nav>
+			<a href="index.html" class="nav-link">Home</a>
+			<a href="index.html#about" class="nav-link">About</a>
+			<a href="resume.html" class="nav-link">Résumé</a>
+			<a href="https://portfolium.com/JessicaFulford" target="_blank" class="nav-link">Portfolio</a>
+			<a href="contact.html" class="nav-link active-link">Contact</a>
+		</nav>
+	</header>
+	<div class="content">
+		<h1>Contact</h1>
+<!-- contact information -->
+		<table>
+			<caption>Contact Information</caption>
+			<tr>
+				<th>Name</th>
+				<td>Jessica Fulford</td>
+			</tr>
+			<tr>
+				<th>Job Title</th>
+				<td>Full-Time Student</td>
+			</tr>
+			<tr>
+				<th>Phone Number</th>
+				<td>(123) 456-7890</td>
+			</tr>
+			<tr>
+				<th>Address</th>
+				<td>777 Street Road, Town, ST, USA</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><a href="mailto:jefulford@outlook.com?Subject=Visitor from your website">jefulford@outlook.com</a></td>
+			</tr>
+			<tr>
+				<th>Social Media</th>
+				<td><a href="https://www.codepen.io/jeful4d">Codepen</a></td>
+			</tr>
+		</table>
+	
+<!-- contact form -->
+		<form id="contact-form">
+			<label>First Name<input type="text" name="input-first-name" required="required"></label>
+				<label>Last Name<input type="text" name="input-last-name" required="required"></label>
+
+			<div id="input-male-div">
+				<label>Male<input type="radio" name="input-gender" value="male" required="required"></label>
+			</div>
+			<div id="input-female-div">
+				<label>Female<input type="radio" name="input-gender" value="female" required="required"></label>
+			</div>
+			<label>Email<input type="email" name="input-email" id="input-email" required="required" placeholder="address@mailservice.com" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9]+\.[A-Za-z]{2,}"></label>
+			
+			<label style="display: block;">Phone Number<br />
+				<span class="label-phone">(</span>
+				<input type="text" name="input-phone-area-code" maxlength="3" required="required">
+				<span class="label-phone">)</span>
+				<input type="text" name="input-phone-three" maxlength="3" required="required">
+				<span class="label-phone">-</span>
+				<input type="text" name="input-phone-four" maxlength="4" required="required">
+			</label>
+			
+			<label id="label-sport">Sport Interests <br />
+				<label>American Football<input type="checkbox"  class="checkbox-sport" name="input-sport" value="football"></label>
+				<label>Baseball<input type="checkbox" class="checkbox-sport" name="input-sport" value="baseball"></label>
+				<label>Soccer<input type="checkbox"  class="checkbox-sport" name="input-sport" value="soccer"></label>
+				<label>Hockey<input type="checkbox" class="checkbox-sport" name="input-sport" value="hockey"></label>
+				<label>Basketball<input type="checkbox"  class="checkbox-sport" name="input-sport" value="basketball"></label>
+			</label>
+			<label id="label-contact-time">Preferred Contact Time
+				<select name="input-contact-time" required>
+					<option value="anytime" selected="selected">Anytime</option>
+					<option value="morning">Morning</option>
+					<option value="afternoon">Afternoon</option>
+					<option value="evening">Evening</option>
+				</select>
+			</label>
+			<label>Subject<input type="text" name="input-subject" required="required"></label>
+			<label>Comments<textarea name="input-message" id="input-message" required="required"></textarea></label>
+			<!-- start RESET BUTTON construction zone -->
+			<div id="input-reset">Reset</div>
+			<div id="confirm-reset-overlay" class="hidden"></div>
+			<div id="confirm-reset-window" class="hidden">
+				<!-- add class hidden-->
+				<h2>Are you sure you want to reset the form?</h2>
+				<span class="reset-button" id="reset-cancel">Cancel</span>
+				<span class="reset-button" id="reset-reset">Reset</span>
+			</div>
+			
+			<!-- end RESET BUTTON construction zone -->
+
+			<!-- might have to keep this for the assignment! DO NOT DELETE! <input type="reset" id="input-reset"> -->
+
+			<input type="submit" id="input-submit" value="Submit" onclick="return checkboxValidation();">
+		</form>
+	</div>
+	<footer>
+		<p>© 2018 Jessica Fulford</p>
+	</footer>
+	<script>
+	// INPUT RESET
+		$("#input-reset").on("click", function () { //removes the hidden class on the confirm reset elements
+			$("#confirm-reset-window").removeClass("hidden");
+			$("#confirm-reset-overlay").removeClass("hidden");
+		});
+		$("#reset-reset").on("click", function () { //resets the form and hides the confirm reset elements
+			document.getElementById("contact-form").reset();
+			$("#confirm-reset-window").addClass("hidden");
+			$("#confirm-reset-overlay").addClass("hidden");
+		});
+		$("#reset-cancel").on("click", function () { //this just hides the confirm reset elements
+			$("#confirm-reset-window").addClass("hidden");
+			$("#confirm-reset-overlay").addClass("hidden");
+		});
+
+	</script>
+</body>
+</html>

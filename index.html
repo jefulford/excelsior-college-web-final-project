@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang=”en” xml:lang=”en”>
+<head>
+	<title>Jessica Fulford - Professional Website</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mainstyle.css">
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- jQuery for each DOM manipulation-->
+	<!-- http://jefproject.s3-website.us-east-2.amazonaws.com/ -->
+	<style>
+		#page-hero {
+			padding: 200px 0px;
+			text-align: center;
+		}
+		#page-hero h1 {
+			font-weight: 900;
+			color: #34404C;
+			font-size: 80px;
+			padding: 0px;
+			padding-bottom: 20px;
+			margin: 0px;
+			font-family: Avenir;
+		}
+		#page-hero hr {
+			border: 4px solid #bbc3cc;
+		}
+		#page-hero h2 {
+			color: #3C4B59;
+			padding-top: 20px;
+			font-family: Marion;
+		}
+		#about h2, #contact-anchor h2 {
+			font-family: Marion;
+			padding: 0px;
+			margin: 0px;
+			font-size: 32px;
+			color: #3C4B59;
+		}
+		#about hr, #contact-anchor hr {
+			border: 2px solid #bbc3cc;
+		}
+
+		/* figure (picture of me)*/
+		figure {
+			width: 230px;
+		}
+		figure img {
+			height: 230px;
+		}
+		figcaption {
+			font-family: Avenir;
+			font-size: 14px;
+		}
+
+		/* video iframe */
+		#about-me-video {
+			margin-top: 20px;
+			margin-bottom: 60px;
+			width: 560px; 
+			height: 315px;
+		}
+
+		/* transcript */
+		#video-transcript {
+			position: absolute;
+			width: 40%;
+			right: 0;
+			height: 36%;
+			top: 107%;
+			background-color: #bbc3cc;
+			box-sizing: border-box
+
+			border: 2px solid #bbc3cc;
+			padding: 20px;
+			font-family: Avenir;
+			line-height: 2.0;
+			text-align: justify;
+		}
+
+		/* media */
+		@media screen and (max-width: 991px){
+			/* large tablets */
+			header nav .nav-link {
+				padding: 0 10px;
+			}
+			#btn-transcript {
+				display: none;
+			}
+		}
+		@media screen and (max-width: 767px){
+			/* medium tablets */
+			header nav .nav-link {
+				padding: 0 10px;
+			}
+			#about-me-video {
+				height: 200px;
+				width: 356px;
+			}
+			#btn-transcript {
+				display: none;
+			}
+			figure img {
+				height: 160px;
+			}
+		}
+		@media screen and (max-width: 479px){
+			/* phones */
+			header nav .nav-link {
+				padding: 0 4px;
+			}
+			#about-me-video {
+				height: 100px;
+				width: 178px;
+			}
+			#btn-transcript {
+				display: none;
+			}
+			figure img {
+				height: 100px;
+			}
+		}
+	</style>
+</head>
+<body>
+<!-- header -->
+	<header>
+<!-- nav -->
+		<nav>
+			<a href="index.html" class="nav-link active-link">Home</a>
+			<a href="index.html#about" class="nav-link">About</a>
+			<a href="resume.html" class="nav-link">Résumé</a>
+			<a href="https://portfolium.com/JessicaFulford" target="_blank" class="nav-link">Portfolio</a>
+			<a href="contact.html" class="nav-link">Contact</a>
+		</nav>
+	</header>
+	<div class="content">
+<!-- name -->
+		<div id="page-hero">
+			<h1>Jessica Fulford</h1>
+			<hr width="200px" />
+			<!-- website purpose -->
+			<h2><em>Portfolio and contact website for an Information Technology student</em></h2>
+		</div>
+	<!-- about -->
+		<div id="about">
+			<h2>About</h2>
+				<hr align="left" width="200px" />
+			<!-- Picture of 'me' -->
+			<figure style="float: right;">
+				<img src="user_pic.jpg" alt="User Pic">
+				<figcaption>A picture of my cat, Archimedes, instead of me.</figcaption>
+			</figure>
+			<p><span class="tab">I</span> am an online full-time student pursuing a degree in Information Technology. I focus mainly in web development, a skill I've been working on continually since mid 2017. Though I've only been working directly with website coding languages since 2017, I have roots in web development back to 2013 from working at my mother's website company. In addition to web development, I invest time in learning about databases and database management.</p>
+			<p><span class="tab">I</span> live in rural New Hampshire and enjoy spending time outside in the beautiful scenery. While indoors, I spend time coding, watching sports, and playing the piano. I also invest time in learning about history, current events, and architecture.</p>
+			<!-- video about me -->
+			<iframe id="about-me-video" src="https://www.youtube.com/embed/MJfsk-uRZCs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<button id="btn-transcript">Video Transcript</button>
+			<span id="video-transcript" class="hidden"><span class="tab">H</span>ello, I'm Jessica Fulford. I'm a full-time student working on my Information Technology degree. I've had some prior work experience working for my mother's website company and testing websites and their designs. I've been interested in websites since around 2013 from working with my mother. <br /><span class="tab">I</span> currently live at home with my parents and siblings (I'm the youngest of four) in rural New Hampshire. In addition, I have two cats –Aristotle and Archimedes– who hang out with me practically all day. In my spare time, I'm a big fan of spending time outside or inside with my family. I hope this helped you learn a bit more about me, and I'm welcome to any questions. Thank you.</span>
+		</div>
+	<!-- contact information -->
+		<div id="contact-anchor">
+			<h2>Contact</h2>
+			<hr align="left" width="200px" />
+			<table>
+				<tr>
+					<th>Name</th>
+					<td>Jessica Fulford</td>
+				</tr>
+				<tr>
+					<th>Job Title</th>
+					<td>Full-Time Student</td>
+				</tr>
+				<tr>
+					<th>Phone Number</th>
+					<td>(123) 456-7890</td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td>777 Street Road, Town, ST, USA</td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><a href="mailto:jefulford@outlook.com">jefulford@outlook.com</a></td>
+				</tr>
+				<tr>
+					<th>Social Media</th>
+					<td><a href="https://www.codepen.io/jeful4d" target="_blank">Codepen</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+<!-- footer -->
+	<footer>
+		<p>© 2018 Jessica Fulford</p>
+	</footer>
+	<script>
+	$("#btn-transcript").on("click", function () {
+			$("#video-transcript").toggleClass("hidden");
+			$("#btn-transcript").toggleClass("btn-activated");
+		})
+	</script>	
+</body>
+</html>
